@@ -2,46 +2,24 @@ import {Button, Container, Nav, Navbar}from 'react-bootstrap'
 import Logo from './assets/img/logo-ggeasy.png'
 import Banner from './assets/img/Baner-ggeasy.jpg'
 
-function Header (){
+function Header () {
   return (
     <header>
-     
-      <Navbar expand='md'
-      className='main-navbar'>
+      <Navbar expand='md' className='main-navbar'>
         <Container>
           <Navbar.Brand href='/'>
-              <img src={Logo} alt='ggeasy width={181} height={50} />
-            
+            <img src={Logo} alt='gg easy' width={181} height={50} />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls = 'navbar-header' />
-         
+          <Navbar.Toggle aria-controls='navbar-header' />
           <Navbar.Collapse id='navbar-header'>
-              <nav className='ms-auto'>
-                  <Nav.Link href='/'> Home </Nav.Link>
-                  <Nav.Link href='/cursos'> Cursos </Nav.Link>
-              </nav>
+            <Nav className='ms-auto'>
+              <Nav.Link href='/'>Home</Nav.Link>
+              <Nav.Link href='/cursos'>Cursos</Nav.Link>
+            </Nav>
           </Navbar.Collapse>
-       </Container>
+        </Container>
       </Navbar>
     </header>
-  )
-}
-function HomeView (){
-  return (
-  <>
-    <Header/>
-    <main>
-      <div className='shadow border p-4 my-3 banner-home'>
-        <h1>Bem vindo ao gg easy</h1>
-        <p>treta</p>
-        <p> venha aprender com a gente</p>
-        <Button>aulas</Button>
-        <img src={Banner} alt='ggeasy' width ={626} height={391} className='img-fluid'/>
-      </div>
-    <p>Conteudo</p>
-    </main>
-    <Footer>
-  </>
   )
 }
 function Footer(){
@@ -51,6 +29,28 @@ function Footer(){
     </footer>
   )
 }
+
+function HomeView (){
+  return (
+  <>
+  <Header/>
+    <main>
+      <Container>
+        <div className='shadow border p-4 my-3 banner-home'>
+            <h1>Bem vindo ao gg easy</h1>
+              <p>treta</p>
+              <p> venha aprender com a gente</p>
+              <Button>aulas</Button>
+            <img src={Banner} alt='ggeasy' width ={626} height={391} className='img-fluid'/>
+        </div>
+    <p>Conteudo</p>
+    </Container>
+    </main>
+    <Footer/>
+  </>
+  )
+}
+
 function App(){
   return <HomeView/>;
 }
