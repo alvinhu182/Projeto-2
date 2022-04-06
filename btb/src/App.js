@@ -11,6 +11,7 @@ function App(){
     <Routes>
       <Route path='/' element={HomeView} />
       <Route path ='*' element={NotFoundView} />
+      <Route path ='*' element={NotFoundView} />
     </Routes>
     
   )
