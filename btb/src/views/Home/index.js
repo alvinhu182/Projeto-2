@@ -1,6 +1,5 @@
 import { Button, Container } from "react-bootstrap";
 import { Layout } from "../../components/Layout";
-import Banner from "../../assets/img/banner.jpg"
 import Footer from "../../components/Layout/footer";
 import {Link} from "react-router-dom";
 
@@ -15,7 +14,8 @@ export function HomeView (){
                 <p> venha aprender com a gente</p>
                 <Button as={Link} to="/cursos">aulas</Button>
         <div>
-          <img src={Banner} alt='ggeasy' width ={626} height={391} className='img-fluid'/>
+          <img src="/assets/img/banner-ggeasy.png" alt='ggeasy' width ={626} height={391} className='img-fluid'/>
+        
           </div>
          </div>
       <p>Conteudo</p>

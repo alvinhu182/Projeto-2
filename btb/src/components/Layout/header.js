@@ -1,5 +1,4 @@
 import { Container, Nav, Navbar } from "react-bootstrap";
-import Logo from '../../assets/img/logo-ggeasy.png'
 import {Link} from "react-router-dom";
 
 export function Header () {
@@ -8,7 +7,7 @@ export function Header () {
         <Navbar expand='md' className='main-navbar'>
           <Container>
             <Navbar.Brand as={Link} to='/'>
-              <img src={Logo} alt='gg easy' width={181} height={50} />
+              <img src="/assets/img/logo-ggeasy.jpg" alt='gg easy' width={50} height={50} />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls='navbar-header' />
             <Navbar.Collapse id='navbar-header'>

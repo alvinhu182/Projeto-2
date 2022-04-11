@@ -1,53 +1,40 @@
-import { Col, Container, Row } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { Alert, Col, Container, Row } from "react-bootstrap";
 import { CardCourse } from "../../components/CardCourse";
 import { Layout } from "../../components/Layout";
+import { Loading } from "../../components/Loading";
 
-const courses = [
-    {
-        id:1,
-        name: 'gameplay de zed',
-        shortDescription: 'aprenda jogar lol',
 
-    },
-    {
-        id:2,
-        name: 'gameplay de akali',
-        shortDescription: 'aprenda jogar lol',
-
-    },
-    {
-        id:3,
-        name: 'gameplay de katarina',
-        shortDescription: 'aprenda jogar lol',
-
-    },
-    {
-        id:4,
-        name: 'gameplay de Caitlyn',
-        shortDescription: 'aprenda jogar lol',
-
-    },
-    {
-        id:5,
-        name: 'gameplay de Diana',
-        shortDescription: 'aprenda jogar lol',
-
-    },
-    {
-        id:6,
-        name: 'gameplay de Garen',
-        shortDescription: 'aprenda jogar lol',
-
-    }
-
-]
 
 export function CoursesView (){
-
+   const [courses, setCourses] = useState([])
+   const [loading, setLoading] = useState(true)
+   const [errorMsg, SeterrorMsg] = useState()
+    useEffect(() => {
+        fetch('http://localhost:3001/courses')
+            .then((response) =>response.json()) 
+            .then((data) => {
+                setCourses(data)
+                setLoading(false)
+                .catch(() =>{
+                    SeterrorMsg('Falha ao buscar cursos. Por favor Recarregue a pagina')
+                    
+                })
+                .finally(() =>{
+                    setLoading(false)
+                })
+            })
+}, [])
     return (
         <Layout>
             <Container>
                 <h1 className="text-center mt-4">Cursos</h1>
+                {loading && (
+                <Loading />
+                )}
+                {errorMsg &&(
+                    <Alert variant='danger'>{errorMsg} </Alert>
+                )}
                 <Row>
                 {courses.map(course => (
                    
