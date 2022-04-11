@@ -1,0 +1,30 @@
+{
+  "courses": [
+    {
+      "name": "cursos de Zed",
+      "shortDescription": "Aprenda a jogar de Zed",
+      "id": 1
+    },
+    {
+      "name": "cursos de Lux",
+      "shortDescription": "Aprenda a jogar de Lux",
+      "id": 2
+    },
+    {
+      "name": "cursos de Kitting",
+      "shortDescription": "Aprenda a fazer o Kitting corretamente",
+      "id": 3
+    },
+    {
+      "name": "cursos de Wards",
+      "shortDescription": "Aprenda a deixar o mapa wardado",
+      "id": 4
+    },
+    {
+      "name": "cursos de controle de wave",
+      "shortDescription": "Aprenda a controlar waves corretamente",
+      "id": 5
+    }
+  ],
+  "inscriptions": []
+}
