@@ -11,7 +11,7 @@ export function CoursesView (){
    const [loading, setLoading] = useState(true)
    const [errorMsg, SeterrorMsg] = useState()
     useEffect(() => {
-        fetch('http://localhost:3001/courses')
+        fetch(`${process.env.REACT_APP_API_URL}/courses`)
             .then((response) =>response.json()) 
             .then((data) => {
                 setCourses(data)
