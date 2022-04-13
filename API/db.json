@@ -2,34 +2,51 @@
   "courses": [
     {
       "name": "cursos de Zed",
+      "coach": "Ayel",
+      "description": "usahusahuhasuhsauh é foda",
       "shortDescription": "Aprenda a jogar de Zed",
       "id": 1,
-      "pathname":"/assets/img/zed.jpg"
+      "pathname": "/assets/img/zed.jpg"
     },
     {
       "name": "cursos de Lux",
+      "coach": "MonoLux",
+      "description": "usahusahuhasuhsauh é foda",
       "shortDescription": "Aprenda a jogar de Lux",
       "id": 2,
-      "pathname":"/assets/img/lux.jpg"
+      "pathname": "/assets/img/lux.jpg"
     },
     {
       "name": "Aprenda o Kitting",
+      "coach": "Barcellux",
+      "description": "usahusahuhasuhsauh é foda",
       "shortDescription": "Aprenda a fazer o Kitting corretamente",
       "id": 3,
-      "pathname":"/assets/img/kitting.jpg"
+      "pathname": "/assets/img/kitting.jpg"
     },
     {
       "name": "Wardando o mapa",
+      "coach": "Ayel",
+      "description": "usahusahuhasuhsauh é foda",
       "shortDescription": "Aprenda a wardar o mapa corretamente",
       "id": 4,
-      "pathname":"/assets/img/wards.jpg"
+      "pathname": "/assets/img/wards.jpg"
     },
     {
       "name": "Controle de wave",
+      "coach": "Ayel",
+      "description": "usahusahuhasuhsauh é foda",
       "shortDescription": "Aprenda a controlar waves corretamente",
       "id": 5,
-      "pathname":"/assets/img/wave.jpg"
+      "pathname": "/assets/img/wave.jpg"
     }
   ],
-  "inscriptions": []
+  "inscriptions": [
+    {
+      "name": "Alvaro",
+      "email": "alvinhu@hotmail.com",
+      "courseId": 1,
+      "id": 1
+    }
+  ]
 }
