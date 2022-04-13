@@ -3,27 +3,32 @@
     {
       "name": "cursos de Zed",
       "shortDescription": "Aprenda a jogar de Zed",
-      "id": 1
+      "id": 1,
+      "pathname":"/assets/img/zed.jpg"
     },
     {
       "name": "cursos de Lux",
       "shortDescription": "Aprenda a jogar de Lux",
-      "id": 2
+      "id": 2,
+      "pathname":"/assets/img/lux.jpg"
     },
     {
-      "name": "cursos de Kitting",
+      "name": "Aprenda o Kitting",
       "shortDescription": "Aprenda a fazer o Kitting corretamente",
-      "id": 3
+      "id": 3,
+      "pathname":"/assets/img/kitting.jpg"
     },
     {
-      "name": "cursos de Wards",
-      "shortDescription": "Aprenda a deixar o mapa wardado",
-      "id": 4
+      "name": "Wardando o mapa",
+      "shortDescription": "Aprenda a wardar o mapa corretamente",
+      "id": 4,
+      "pathname":"/assets/img/wards.jpg"
     },
     {
-      "name": "cursos de controle de wave",
+      "name": "Controle de wave",
       "shortDescription": "Aprenda a controlar waves corretamente",
-      "id": 5
+      "id": 5,
+      "pathname":"/assets/img/wave.jpg"
     }
   ],
   "inscriptions": []
