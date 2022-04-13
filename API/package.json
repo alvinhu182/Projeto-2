@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":  "json-server --watch db.json --port $PORT --host 0.0.0.0",
+    "start": "json-server --watch db.json --port $PORT --host 0.0.0.0",
     "startdev": "json-server --watch db.json --port 3001"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^0.17.0"
+  }
 }
-
-
