@@ -39,7 +39,7 @@ export function CourseDetailView () {
   }
   return (
     <Layout>
-      <Container>
+      <Container className="footerDetail">
         {errorMsg ? (
           <Alert variant="danger" className="mt-3">{errorMsg}</Alert>
         ) : (

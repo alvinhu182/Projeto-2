@@ -4,7 +4,7 @@ export function CardCourse ({course}){
     console.log(course) 
     return (
         
-        <Card className='text-center shadow h-100'>
+        <Card className='text-center shadow h-100 m-2'>
         <Card.Body className="d-flex flex-column align-items-center">
             <Card.Title as='h2' className="h5">{course.name}</Card.Title>
             <Card.Text>{course.shortDescription}</Card.Text>

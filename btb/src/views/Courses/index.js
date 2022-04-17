@@ -27,7 +27,7 @@ export function CoursesView (){
 }, [])
     return (
         <Layout>
-            <Container>
+            <Container classname="centerContent">
                 <h1 className="text-center mt-4">Cursos</h1>
                 {loading && (
                 <Loading />

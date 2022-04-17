@@ -31,7 +31,7 @@ html, body #root {
     flex:1;
 }
 .banner-home h1{
-    color:aqua;
+    color: black;
 }
 .baner-home p {
     font-size: 18px;;
@@ -47,3 +47,18 @@ html, body #root {
        height: 50px;
     }      
 } 
+
+
+
+.centerContent {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: calc(100vh - 140px);
+}
+
+.footerDetail{
+    height: calc(100vh - 140px);
+    
+}
