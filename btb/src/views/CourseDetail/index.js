@@ -5,7 +5,7 @@ import { Layout } from "../../components/Layout";
 import { Loading } from "../../components/Loading";
 import { NotFoundView } from "../NotFound";
 import { InscriptionForm } from "./InscriptionForm";
-import { Inscriptions } from "./Teste";
+import { Inscriptions } from "./Inscription";
 
 export function CourseDetailView () {
   const { id } = useParams()
