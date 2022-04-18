@@ -46,7 +46,7 @@ export function CourseDetailView () {
         ) : (
           <>
             <h1 className="text-center mt-4">{course.name}</h1>
-            <p><strong>Coordenador:</strong> {course.coordinator}</p>
+            <p><strong>Coach:</strong> {course.coach}</p>
             <p>{course.description}</p>
             <Inscriptions inscriptions={course.inscriptions} />
             <InscriptionForm courseId={id} onRegister={fetchCourse} />

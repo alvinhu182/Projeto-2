@@ -78,3 +78,6 @@ export function InscriptionForm ({ courseId, onRegister }) {
     </>
   )
 }
+
+
+
