@@ -53,6 +53,12 @@
       "email": "alvinhu@hotmail.com",
       "courseId": 1,
       "id": 2
+    },
+    {
+      "name": "teste",
+      "email": "teste@teste.com",
+      "courseId": 2,
+      "id": 3
     }
   ]
 }
