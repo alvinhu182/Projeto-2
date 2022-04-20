@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Alert, Button, Form } from "react-bootstrap"
+import { createInscription } from "../../services/Inscriptions.service"
 
 const initialFormData = {
   userName: '',
@@ -22,16 +23,10 @@ export function InscriptionForm ({ courseId, onRegister }) {
     try {
       setErrorMsg(undefined)
       setIsSubmiting(true)
-      await fetch(`${process.env.REACT_APP_API_URL}/inscriptions`, {
-        method: 'POST',
-        body: JSON.stringify({
-          name: formData.userName,
-          email: formData.userEmail,
-          courseId: parseInt(courseId)
-        }),
-        headers: {
-          'content-type': 'application/json'
-        }
+      await createInscription({
+        name: formData.userName,
+        email: formData.userEmail,
+        courseId: parseInt(courseId)
       })
       setShowSuccess(true)
       setFormData(initialFormData)

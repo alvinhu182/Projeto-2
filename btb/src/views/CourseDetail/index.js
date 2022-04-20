@@ -6,6 +6,7 @@ import { Loading } from "../../components/Loading";
 import { NotFoundView } from "../NotFound";
 import { InscriptionForm } from "./InscriptionForm";
 import { Inscriptions } from "./Inscription";
+import { getCourseById } from "../../services/Courses.service";
 
 export function CourseDetailView () {
   const { id } = useParams()
@@ -14,11 +15,9 @@ export function CourseDetailView () {
   const [errorMsg, setErrorMsg] = useState()
   const fetchCourse = useCallback(async () => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/courses/${id}?_embed=inscriptions`)
-      if (!response.ok) {
-        throw new Error('Response not ok.')
-      }
-      const data = await response.json()
+   const data = await getCourseById()
+      
+    
       setCourse(data)
       setLoading(false)
     } catch (err) {
