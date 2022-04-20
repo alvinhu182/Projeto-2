@@ -73,7 +73,8 @@ export function InscriptionForm ({ courseId, onRegister }) {
             required
           />
         </Form.Group>
-        <Button type='submit' disabled={isSubmiting}>Inscrever</Button>
+        <Button className="m-2"  type='submit' disabled={isSubmiting}>Inscrever</Button>
+       
       </Form>
     </>
   )

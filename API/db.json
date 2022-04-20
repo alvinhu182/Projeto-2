@@ -59,6 +59,36 @@
       "email": "teste@teste.com",
       "courseId": 2,
       "id": 3
+    },
+    {
+      "name": "teste",
+      "email": "teste@teste.com",
+      "courseId": 1,
+      "id": 4
+    },
+    {
+      "name": "teste",
+      "email": "teste@teste.com",
+      "courseId": 1,
+      "id": 5
+    },
+    {
+      "name": "teste",
+      "email": "teste@teste.com",
+      "courseId": 1,
+      "id": 6
+    },
+    {
+      "name": "teste",
+      "email": "teste@teste.com",
+      "courseId": 1,
+      "id": 7
+    },
+    {
+      "name": "teste",
+      "email": "teste@teste.com",
+      "courseId": 1,
+      "id": 8
     }
   ]
 }
