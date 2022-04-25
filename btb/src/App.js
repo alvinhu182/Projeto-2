@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom"
 import { NotFoundView } from "./views/NotFound";
 import { CoursesView } from "./views/Courses";
 import { CourseDetailView } from "./views/CourseDetail";
+import { DashboardView } from "./views/Dashboard";
 
 
 
@@ -14,6 +15,7 @@ function App(){
       <Route path='/' element={<HomeView />} />
       <Route path='/cursos' element={<CoursesView />} />
       <Route path='/cursos/:id' element={<CourseDetailView />} />
+      <Route path='/portal' element ={<DashboardView/>} />
       <Route path='*' element={<NotFoundView />} />
     </Routes>
     

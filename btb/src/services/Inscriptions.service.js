@@ -1,5 +1,7 @@
+import { apiUrl } from "./Api.service"
+
 export const createInscription =async (inscriptionData) => {
-   const response = await fetch(`${process.env.REACT_APP_API_URL}/inscriptions`, {
+   const response = await fetch(`${apiUrl}/inscriptions`, {
         method: 'POST',
         body: JSON.stringify(inscriptionData),
         headers: {
