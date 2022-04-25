@@ -7,6 +7,7 @@ import { NotFoundView } from "../NotFound";
 import { InscriptionForm } from "./InscriptionForm";
 import { Inscriptions } from "./Inscription";
 import { getCourseById } from "../../services/Courses.service";
+import styled from "styled-components";
 
 export function CourseDetailView () {
   const { id } = useParams()
@@ -15,7 +16,7 @@ export function CourseDetailView () {
   const [errorMsg, setErrorMsg] = useState()
   const fetchCourse = useCallback(async () => {
     try {
-   const data = await getCourseById()
+   const data = await getCourseById(id)
       
     
       setCourse(data)
@@ -39,7 +40,7 @@ export function CourseDetailView () {
   }
   return (
     <Layout>
-      <Container className="course-detail-container">
+      <ContainerStyled >
         {errorMsg ? (
           <Alert variant="danger" className="mt-3">{errorMsg}</Alert>
         ) : (
@@ -51,7 +52,13 @@ export function CourseDetailView () {
             <InscriptionForm courseId={id} onRegister={fetchCourse} />
           </>
         )}
-      </Container>
+      </ContainerStyled>
     </Layout>
   )
 }
+
+const ContainerStyled = styled (Container)`
+
+    max-width: 900px;
+
+`
