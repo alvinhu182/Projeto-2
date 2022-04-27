@@ -4,6 +4,7 @@ import { NotFoundView } from "./views/NotFound";
 import { CoursesView } from "./views/Courses";
 import { CourseDetailView } from "./views/CourseDetail";
 import { DashboardView } from "./views/Dashboard";
+import { LoginView } from "./views/Login";
 
 
 
@@ -16,7 +17,9 @@ function App(){
       <Route path='/cursos' element={<CoursesView />} />
       <Route path='/cursos/:id' element={<CourseDetailView />} />
       <Route path='/portal' element ={<DashboardView/>} />
+      <Route path='/portal/login' element ={<LoginView/>} />
       <Route path='*' element={<NotFoundView />} />
+      
     </Routes>
     
   )

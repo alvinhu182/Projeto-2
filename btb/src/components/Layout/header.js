@@ -16,6 +16,7 @@ export function Header () {
               <Nav className='ms-auto'>
                 <NavLinkStyled forwardedAs = {Link} to='/' >Home</NavLinkStyled>
                 <NavLinkStyled forwardedAs = {Link} to='/cursos'>Cursos</NavLinkStyled>
+                <NavLinkStyled forwardedAs = {Link} to='/portal'>Login</NavLinkStyled>
               </Nav>
             </Navbar.Collapse>
           </Container>
@@ -35,6 +36,6 @@ export function Header () {
     background-color: whitesmoke;
     border-radius: 3px;
     text-align: center;
-    margin: 5px 0;
-    box-shadow: 2px 2px 2 px rgba(42, 69, 136, 0.3);
+    margin: 5px 5px;
+    box-shadow: 2px 2px 2px rgba(42, 69, 136, 0.3);
   `
