@@ -3,7 +3,7 @@ import NavbarToggle from "react-bootstrap/esm/NavbarToggle";
 import { useSelector } from "react-redux";
 import {Link} from "react-router-dom";
 import styled from 'styled-components'
-import { selectIsUserLoggedIn } from "../../store/User/User.selectors";
+import { selectIsUserLoggedIn } from "../../Store/User/User.selectors";
 
 export function Header () {
  const isUserLoggedIn = useSelector(selectIsUserLoggedIn)

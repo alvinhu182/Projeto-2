@@ -2,7 +2,7 @@ import { CloseButton, Nav } from "react-bootstrap";
 import styled from "styled-components";
 import { SidebarItem } from "./SidebarItem";
 import { useSelector } from 'react-redux';
-import { selectUser } from '../../store/User/User.selectors'
+import { selectUser } from '../../Store/User/User.selectors'
 
 const menuItems = [
   {
