@@ -1,9 +1,12 @@
 import { Container, Nav, Navbar  } from "react-bootstrap";
 import NavbarToggle from "react-bootstrap/esm/NavbarToggle";
+import { useSelector } from "react-redux";
 import {Link} from "react-router-dom";
 import styled from 'styled-components'
+import { selectIsUserLoggedIn } from "../../store/User/User.selectors";
 
 export function Header () {
+ const isUserLoggedIn = useSelector(selectIsUserLoggedIn)
     return (
       <header>
         <NavbarStyled expand='md' className='main-navbar'>
@@ -16,7 +19,12 @@ export function Header () {
               <Nav className='ms-auto'>
                 <NavLinkStyled forwardedAs = {Link} to='/' >Home</NavLinkStyled>
                 <NavLinkStyled forwardedAs = {Link} to='/cursos'>Cursos</NavLinkStyled>
-                <NavLinkStyled forwardedAs = {Link} to='/portal'>Login</NavLinkStyled>
+                {isUserLoggedIn ?   (
+                <NavLinkStyled forwardedAs = {Link} to='/portal'>Acessar portal</NavLinkStyled>
+                ) : (
+                  <NavLinkStyled forwardedAs = {Link} to='/portal/login'>Login</NavLinkStyled>
+                )}
+                
               </Nav>
             </Navbar.Collapse>
           </Container>
