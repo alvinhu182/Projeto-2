@@ -23,7 +23,7 @@ export function Topbar ({onOpen}){
                     <Dropdown align='end'>
                         <Dropdown.Toggle variant = 'light'>{user.name}</Dropdown.Toggle>
                             <MenuStylled>
-                                <Dropdown.Item>onClick={handleLogout} </Dropdown.Item>
+                                <Dropdown.Item onClick={handleLogout}> Sair </Dropdown.Item>
                             </MenuStylled>
                     </Dropdown>
                 </Nav>

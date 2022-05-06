@@ -26,6 +26,11 @@ export const login = async (credentialsData) => {
    return userData
 }
 
+// criar uma função de registro
+// nela precisa receber os campos de data como email, password o tipo de usario deve estar pre-setado
+    // voce tem um exemplo muito bom em cima
+
+
 export const logout = () => {
     removeStorageItem('user')
 }

@@ -11,7 +11,7 @@ const menuItems = [
     userTypes: [1, 2]
   },
   {
-    to: '/portal/cursos',
+    to: '/cursos',
     text: 'Cursos',
     userTypes: [1]
   }

@@ -11,11 +11,12 @@ export function RegisterForm () {
      const handleChange = (event) => {
         setFormData ({
             ...formData,
-            [event.traget.name]: event.target.value
+            [event.target.name]: event.target.value
         })
     }
     const handleSubmit = (event) =>{
         event.preventDefault()
+        
 
     }
     return (
