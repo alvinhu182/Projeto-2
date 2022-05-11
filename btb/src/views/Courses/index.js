@@ -3,6 +3,7 @@ import { Alert, Col, Container, Row } from "react-bootstrap";
 import { CardCourse } from "../../components/CardCourse";
 import { Layout } from "../../components/Layout";
 import { Loading } from "../../components/Loading";
+import { getCourses } from "../../services/Courses.service";
 
 
 
@@ -11,23 +12,20 @@ export function CoursesView (){
    const [loading, setLoading] = useState(true)
    const [errorMsg, SeterrorMsg] = useState()
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_API_URL}/courses`)
-            .then((response) =>response.json()) 
-            .then((data) => {
-                setCourses(data)
-                setLoading(false)
-                .catch(() =>{
-                    SeterrorMsg('Falha ao buscar cursos. Por favor Recarregue a pagina')
-                    
-                })
-                .finally(() =>{
-                    setLoading(false)
-                })
-            })
+        const fetchCourses = async () => {
+        try {
+         const data = await getCourses()
+         setCourses(data)
+        } catch {
+            SeterrorMsg('deu ruim amigão, aperta f5 ai')
+        }
+        setLoading(false)
+    }
+    fetchCourses()
 }, [])
     return (
         <Layout>
-            <Container classname="centerContent">
+            <Container className="centerContent">
                 <h1 className="text-center mt-4">Cursos</h1>
                 {loading && (
                 <Loading />

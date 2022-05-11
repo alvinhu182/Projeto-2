@@ -6,6 +6,8 @@ import { Loading } from "../../components/Loading";
 import { NotFoundView } from "../NotFound";
 import { InscriptionForm } from "./InscriptionForm";
 import { Inscriptions } from "./Inscription";
+import { getCourseById } from "../../services/Courses.service";
+import styled from "styled-components";
 
 export function CourseDetailView () {
   const { id } = useParams()
@@ -14,11 +16,9 @@ export function CourseDetailView () {
   const [errorMsg, setErrorMsg] = useState()
   const fetchCourse = useCallback(async () => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/courses/${id}?_embed=inscriptions`)
-      if (!response.ok) {
-        throw new Error('Response not ok.')
-      }
-      const data = await response.json()
+   const data = await getCourseById(id)
+      
+    
       setCourse(data)
       setLoading(false)
     } catch (err) {
@@ -40,7 +40,7 @@ export function CourseDetailView () {
   }
   return (
     <Layout>
-      <Container className="course-detail-container">
+      <ContainerStyled >
         {errorMsg ? (
           <Alert variant="danger" className="mt-3">{errorMsg}</Alert>
         ) : (
@@ -52,7 +52,13 @@ export function CourseDetailView () {
             <InscriptionForm courseId={id} onRegister={fetchCourse} />
           </>
         )}
-      </Container>
+      </ContainerStyled>
     </Layout>
   )
 }
+
+const ContainerStyled = styled (Container)`
+
+    max-width: 900px;
+
+`

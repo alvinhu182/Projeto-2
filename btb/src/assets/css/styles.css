@@ -1,54 +1,11 @@
-.main-navbar{
-    background-color: black;
-}
-.main-navbar .navbar-toggler {
-    background: whitesmoke;
-    border: none;
-}
-.main-navbar .nav-link {
-    background-color: whitesmoke;
-    border-radius: 3px;
-    text-align: center;
-    margin: 5px 0;
-    box-shadow: 2px 2px 2 px rgba(42, 69, 136, 0.3);
-}
-@media(min-width: 768px){
-    .main-navbar .nav-link{
-        margin: 0 5px;
-    }
-}
-.footer{
-    background-color: black;
-}
-html, body #root {
-    height:100%;
-}
-#root{
-    display: flex;
-    flex-direction: column;
-}
-#root > main {
-    flex:1;
-}
-.banner-home h1{
-    color: black;
-}
-.baner-home p {
-    font-size: 18px;;
-}
 
-.banner-home > div {
-    flex: 1;
-}
 
 @media(max-width:768px) {
-    .card-img {
+    .carta-img {
        width: 50px;
        height: 50px;
     }      
 } 
-
-
 
 .centerContent {
     align-items: center;

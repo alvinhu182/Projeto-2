@@ -2,7 +2,7 @@
   "courses": [
     {
       "name": "Zed",
-      "coach": "Ayel",
+      "coach": "ZzZzZz",
       "description": "usahusahuhasuhsauh é foda",
       "shortDescription": "Aprenda a jogar de Zed",
       "id": 1,
@@ -18,7 +18,7 @@
     },
     {
       "name": "Kitting",
-      "coach": "Barcellux",
+      "coach": "XxXxxXx",
       "description": "usahusahuhasuhsauh é foda",
       "shortDescription": "Aprenda a fazer o Kitting",
       "id": 3,
@@ -26,7 +26,7 @@
     },
     {
       "name": "Wardando o mapa",
-      "coach": "Ayel",
+      "coach": "SsSsSss",
       "description": "usahusahuhasuhsauh é foda",
       "shortDescription": "Aprenda a wardar o mapa ",
       "id": 4,
@@ -34,7 +34,7 @@
     },
     {
       "name": "Controle de wave",
-      "coach": "Ayel",
+      "coach": "FfFFFff",
       "description": "usahusahuhasuhsauh é foda",
       "shortDescription": "Aprenda a controlar waves ",
       "id": 5,
@@ -89,6 +89,43 @@
       "email": "teste@teste.com",
       "courseId": 1,
       "id": 8
+    }
+  ],
+  "users": [
+    {
+      "email": "aluno@aluno.com",
+      "password": "$2a$10$DSESAWzv.yQhvKixasmoaefzmxrdua9Nc/rhCQ9.Axz1EVDhh.mcK",
+      "name": "Aluno",
+      "type": 2,
+      "id": 1
+    },
+    {
+      "email": "admin@admin.com",
+      "password": "$2a$10$bAfCwprOvEl8OMD1yUJzL.MTUx8Ks4dzkBaeoVMefYgoeG98cBxp6",
+      "name": "Administrador",
+      "type": 1,
+      "id": 2
+    },
+    {
+      "email": "alvinhu@admin.com",
+      "password": "$2a$10$cSn1j9ejG3W13foH5u00A.oXECS04hxO0EZp0RT.wecxqegEvLGoi",
+      "name": "alvinhu123",
+      "type": 1,
+      "id": 3
+    },
+    {
+      "email": "teste@teste.com",
+      "password": "$2a$10$Dxu3GBQhrjyAlNGB.zD7EOoA7UhZMS5ip7cilcNWBsYuCkOGAbViO",
+      "name": "teste",
+      "type": 2,
+      "id": 4
+    },
+    {
+      "email": "teste1@teste.com",
+      "password": "$2a$10$6Yt1btd7hAGkR0UXRrJhLeiOKgkgWHSqvVEspJqlNdOE6KzfY73vy",
+      "name": "teste1",
+      "type": 1,
+      "id": 5
     }
   ]
 }
