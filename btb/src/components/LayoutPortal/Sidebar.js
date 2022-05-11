@@ -8,11 +8,13 @@ const menuItems = [
   {
     to: '/portal',
     text: 'Dashboard',
+    checkAllPath:true,
     userTypes: [1, 2]
   },
   {
-    to: '/cursos',
+    to: '/portal/cursos',
     text: 'Cursos',
+    checkAllPath:false,
     userTypes: [1]
   }
 ]

@@ -7,7 +7,8 @@ import { login } from "../../services/Users.service";
 import { userLogin } from "../../Store/User/User.actions";
 
 
-export function LoginForm () {
+export function LoginForm (redirectAfterLogin) {
+  const [isSubmiting, setIsSubmiting] = useState(false)
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -23,10 +24,13 @@ export function LoginForm () {
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
+      setIsSubmiting(true)
       const userData = await login(formData)
        // Enviar para o Redux
        dispatch(userLogin(userData))
-       navigate('/portal')
+       if (redirectAfterLogin){
+        navigate('/portal')
+      }
       
     } catch (error){
         const message = error.message === 'Credentials invalid.'
@@ -34,7 +38,9 @@ export function LoginForm () {
         : 'Falha ao fazer Login, tente novamente'
         console.error(error)
         toast.error(message)
+        setIsSubmiting(false)
   } 
+  
 }
   return (
     <Form onSubmit={handleSubmit}>
@@ -61,7 +67,7 @@ export function LoginForm () {
           required
         />
       </Form.Group>
-      <Button type='submit'>Entrar</Button>
+      <Button type='submit' disabled={isSubmiting}>Entrar</Button>
     </Form>
 
   )

@@ -18,19 +18,44 @@ export const login = async (credentialsData) => {
        : 'Response not ok.'
        throw new Error(message)
    }
-   const userData = {
-       accessToken: data.accessToken,
-      ...data.user
-   }
-   setStorageItem('user', JSON.stringify(userData))
-   return userData
+   return processAuthResponse(data)
 }
-
-// criar uma função de registro
-// nela precisa receber os campos de data como email, password o tipo de usario deve estar pre-setado
-    // voce tem um exemplo muito bom em cima
-
+  
+  
 
 export const logout = () => {
     removeStorageItem('user')
+}
+
+export const createUser = async (userData) => {
+    const body = JSON.stringify ({
+        ...userData,
+        type: 2
+    })
+    const response = await fetch(`${apiUrl}/signup`,{
+      method: 'POST',
+      body,
+      headers: {
+          'content-type':'application/json'
+      }  
+    })
+    const data = await response.json()
+    if (!response.ok){
+        const message = typeof data === 'string'
+        ? data
+        : 'Response not ok.'
+        throw new Error (message)
+
+    }
+    return processAuthResponse(data)
+}
+
+
+const processAuthResponse = (data) => {
+    const userData = {
+        accesToken: data.accesToken,
+        ...data.user
+    }
+    setStorageItem('user', JSON.stringify(userData))
+    return userData
 }

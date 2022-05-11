@@ -1,76 +1,44 @@
 import { useState } from "react"
-import { Alert, Button, Form } from "react-bootstrap"
+import {  Button  } from "react-bootstrap"
+import { useSelector } from "react-redux"
+import { toast } from "react-toastify"
 import { createInscription } from "../../services/Inscriptions.service"
+import { selectUser} from "../../Store/User/User.selectors"
+import { AuthForm } from "../../components/AuthForm"
 
-const initialFormData = {
-  userName: '',
-  userEmail: '' 
-}
 
 export function InscriptionForm ({ courseId, onRegister }) {
-  const [showSuccess, setShowSuccess] = useState(false)
+  const user = useSelector(selectUser)
   const [isSubmiting, setIsSubmiting] = useState(false)
-  const [errorMsg, setErrorMsg] = useState()
-  const [formData, setFormData] = useState(initialFormData)
-  const handleChange = (event) => {
-    setFormData({
-      ...formData,
-      [event.target.name]: event.target.value
-    })
-  }
-  const handleSubmit = async (event) => {
-    event.preventDefault()
+  const handleInscription = async () => {
     try {
-      setErrorMsg(undefined)
       setIsSubmiting(true)
       await createInscription({
-        name: formData.userName,
-        email: formData.userEmail,
-        courseId: parseInt(courseId)
+        name: user.userName,
+        email: user.userEmail,
+        courseId: parseInt(courseId),
+        userId: user.id
       })
-      setShowSuccess(true)
-      setFormData(initialFormData)
+   
+      toast.success('Inscrito com sucesso')
       onRegister()
     } catch (err) {
       console.error(err)
-      setErrorMsg('Falha ao fazer inscrição. Tente novamente.')
+      toast.error('Falha ao fazer inscrição. Tente novamente.')
     }
     setIsSubmiting(false)
   }
   return (
     <>
-      <h2>Formulário de inscrição</h2>
-      {showSuccess && (
-        <Alert variant="success" dismissible onClose={() => setShowSuccess(false)}>Inscrito com sucesso.</Alert>
+      <h2>Se inscreva aqui</h2>
+      {user ? (
+        <Button onClick={handleInscription} disabled ={isSubmiting}>Inscrever</Button>
+      ) : (
+        <>
+        <p>Faça login ou crie uma conta abaixo para se inscrever no site </p>
+        <AuthForm redirectAfterLogin={false} />
+        </>
       )}
-      {errorMsg && (
-        <Alert variant="danger">{errorMsg}</Alert>
-      )}
-      <Form onSubmit={handleSubmit}>
-        <Form.Group controlId="inscription-name" className="mb-3">
-          <Form.Label className="m-0">Nome</Form.Label>
-          <Form.Control
-            placeholder="Informe seu nome"
-            value={formData.userName}
-            onChange={handleChange}
-            name="userName"
-            required
-          />
-        </Form.Group>
-        <Form.Group controlId="inscription-email" className="mb-3">
-          <Form.Label className="m-0">E-mail</Form.Label>
-          <Form.Control
-            type='email'
-            placeholder="exemplo@exemplo.com"
-            value={formData.userEmail}
-            onChange={handleChange}
-            name="userEmail"
-            required
-          />
-        </Form.Group>
-        <Button className="m-2"  type='submit' disabled={isSubmiting}>Inscrever</Button>
-       
-      </Form>
     </>
   )
 }
