@@ -7,12 +7,10 @@ import { deleteCourse } from "../../services/Courses.service"
 export function TableCourses ({courses, onDeleteCourse}) {
     const [courseToDelete, setCourseToDelete] = useState()
     const hideModal = () => setCourseToDelete(undefined)
-    const handleClick =  async (course) =>{
-     setCourseToDelete(course)
-   
-        
-
+    const handleClick = (course) =>{
+     setCourseToDelete(course)        
     }
+
     const handleDelete = async () => {
         try {
             await deleteCourse(courseToDelete.id)
@@ -23,7 +21,9 @@ export function TableCourses ({courses, onDeleteCourse}) {
         }
         hideModal()
     }
+  
     return (
+
         <>
     <Table striped hover responsive>
         <thead>

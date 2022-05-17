@@ -10,14 +10,14 @@ import { getCourses } from "../../services/Courses.service";
 export function CoursesView (){
    const [courses, setCourses] = useState([])
    const [loading, setLoading] = useState(true)
-   const [errorMsg, SeterrorMsg] = useState()
+   const [errorMsg, setErrorMsg] = useState()
     useEffect(() => {
         const fetchCourses = async () => {
         try {
          const data = await getCourses()
          setCourses(data)
         } catch {
-            SeterrorMsg('deu ruim amigão, aperta f5 ai')
+            setErrorMsg('deu ruim amigão, aperta f5 ai')
         }
         setLoading(false)
     }
@@ -25,8 +25,8 @@ export function CoursesView (){
 }, [])
     return (
         <Layout>
-            <Container className="centerContent">
-                <h1 className="text-center mt-4">Cursos</h1>
+            <Container>
+                <h1 className="text-center mt-4">Aulas</h1>
                 {loading && (
                 <Loading />
                 )}

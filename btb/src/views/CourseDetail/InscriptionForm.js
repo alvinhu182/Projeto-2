@@ -1,11 +1,10 @@
 import { useState } from "react"
-import {  Button  } from "react-bootstrap"
+import { Button } from "react-bootstrap"
 import { useSelector } from "react-redux"
 import { toast } from "react-toastify"
-import { createInscription } from "../../services/Inscriptions.service"
-import { selectUser} from "../../Store/User/User.selectors"
 import { AuthForm } from "../../components/AuthForm"
-
+import { createInscription } from "../../services/Inscriptions.service"
+import { selectUser } from "../../store/User/User.selectors"
 
 export function InscriptionForm ({ courseId, onRegister }) {
   const user = useSelector(selectUser)
@@ -14,13 +13,12 @@ export function InscriptionForm ({ courseId, onRegister }) {
     try {
       setIsSubmiting(true)
       await createInscription({
-        name: user.userName,
-        email: user.userEmail,
+        name: user.name,
+        email: user.email,
         courseId: parseInt(courseId),
         userId: user.id
       })
-   
-      toast.success('Inscrito com sucesso')
+      toast.success('Inscrito com sucesso.')
       onRegister()
     } catch (err) {
       console.error(err)
@@ -30,18 +28,15 @@ export function InscriptionForm ({ courseId, onRegister }) {
   }
   return (
     <>
-      <h2>Se inscreva aqui</h2>
+      <h2>Faça sua inscrição aqui</h2>
       {user ? (
-        <Button onClick={handleInscription} disabled ={isSubmiting}>Inscrever</Button>
+        <Button onClick={handleInscription} disabled={isSubmiting}>Inscrever</Button>
       ) : (
         <>
-        <p>Faça login ou crie uma conta abaixo para se inscrever no site </p>
-        <AuthForm redirectAfterLogin={false} />
+          <p>Faça login ou crie uma conta abaixo para se inscrever no curso.</p>
+          <AuthForm redirectAfterLogin={false} />
         </>
       )}
     </>
   )
 }
-
-
-

@@ -4,10 +4,10 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { login } from "../../services/Users.service";
-import { userLogin } from "../../Store/User/User.actions";
+import { userLogin } from "../../store/User/User.actions";
 
 
-export function LoginForm (redirectAfterLogin) {
+export function LoginForm ({ redirectAfterLogin }) {
   const [isSubmiting, setIsSubmiting] = useState(false)
   const [formData, setFormData] = useState({
     email: '',

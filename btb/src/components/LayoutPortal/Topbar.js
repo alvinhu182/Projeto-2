@@ -3,8 +3,8 @@ import styled from "styled-components";
 import {useDispatch, useSelector} from 'react-redux';
 import { logout } from "../../services/Users.service";
 import {useNavigate} from  "react-router-dom";
-import { userLogout } from "../../Store/User/User.actions";
-import { selectUser } from "../../Store/User/User.selectors";
+import { userLogout } from "../../store/User/User.actions";
+import { selectUser } from "../../store/User/User.selectors";
 
 export function Topbar ({onOpen}){
     const user = useSelector(selectUser)

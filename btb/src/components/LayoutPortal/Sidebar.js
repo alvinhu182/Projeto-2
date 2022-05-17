@@ -2,7 +2,7 @@ import { CloseButton, Nav } from "react-bootstrap";
 import styled from "styled-components";
 import { SidebarItem } from "./SidebarItem";
 import { useSelector } from 'react-redux';
-import { selectUser } from '../../Store/User/User.selectors'
+import { selectUser } from '../../store/User/User.selectors'
 
 const menuItems = [
   {
@@ -16,8 +16,15 @@ const menuItems = [
     text: 'Cursos',
     checkAllPath:false,
     userTypes: [1]
+  },
+  {
+    to: '/cursos',
+    text: 'Lista de cursos',
+    checkAllPath:true,
+    userTypes: [1, 2]
   }
 ]
+
 
 export function Sidebar ({ isOpen, onClose }) {
   const { type } = useSelector(selectUser)

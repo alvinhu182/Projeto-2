@@ -27,7 +27,7 @@ export function AdminEditCourseView () {
         try {
             await updateCourse(id, formData)
             toast.success('Aula alterada com sucesso.')
-            navigate('/portal/cursos')
+             navigate('/portal/cursos')
         } catch {
             toast.error('Falha ao editar a aula. Tente novamente.')
         }
@@ -41,11 +41,11 @@ export function AdminEditCourseView () {
             
             <UpsertCourseForm
              initialValue={{
-                 name:'course.name',
-                 coach:'course.coach',
-                 description:'course.description',
-                 shortDescription:'course.shortDescription',
-                 pathname:'course.pathname'
+                 name: course.name,
+                 coach: course.coach,
+                 description: course.description,
+                 shortDescription: course.shortDescription,
+                 pathname:course.pathname
              }}
              buttonLabel='Alterar'
              onSubmit={handleSubmit}

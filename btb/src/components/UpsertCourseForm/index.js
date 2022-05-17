@@ -15,13 +15,17 @@ export function UpsertCourseForm ({initialValue = emptyFormData, buttonLabel = '
             ...formData,
             [event.target.name]: event.target.value
         })
+       
     }
     const handleSubmit = (event) => {
-        event.preventDefalt()
-        onSubmit(formData)
+         event.preventDefault()
+         onSubmit(formData)
+        
     }
+    
     return (
-        <Form onSubmit ={handleSubmit}>
+       
+        <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="course-name">
                 <Form.Label className="mb-0">Nome</Form.Label>
                 <Form.Control
@@ -43,7 +47,7 @@ export function UpsertCourseForm ({initialValue = emptyFormData, buttonLabel = '
                 />
             </Form.Group>
             <Form.Group className="mb-3" controlId="course-description">
-                <Form.Label className="mb-0">Nome</Form.Label>
+                <Form.Label className="mb-0">Descrição</Form.Label>
                 <Form.Control
                     placeholder="Descrição da aula"
                     name="description"
@@ -54,7 +58,7 @@ export function UpsertCourseForm ({initialValue = emptyFormData, buttonLabel = '
                 />
             </Form.Group>
             <Form.Group className="mb-3" controlId="course-shortDescription">
-                <Form.Label className="mb-0">Nome</Form.Label>
+                <Form.Label className="mb-0">Descrição Curta</Form.Label>
                 <Form.Control
                     placeholder="Pequena descrição da aula"
                     name="shortDescription"
@@ -65,7 +69,7 @@ export function UpsertCourseForm ({initialValue = emptyFormData, buttonLabel = '
                 />
             </Form.Group>
             <Form.Group className="mb-3" controlId="course-pathname">
-                <Form.Label className="mb-0">Nome</Form.Label>
+                <Form.Label className="mb-0">Imagem</Form.Label>
                 <Form.Control
                     placeholder="Imagem da aula"
                     name="pathname"
@@ -76,7 +80,11 @@ export function UpsertCourseForm ({initialValue = emptyFormData, buttonLabel = '
                 <Form.Text>Cole aqui o link da imagem hospedada no <a href="https://cloudinary.com" target='_blank' rel="noreferrer">Cloudinary </a>.</Form.Text>
             </Form.Group>
  
-            <Button type ='submit'>{buttonLabel} </Button>
+            <Button type="submit" >{buttonLabel} </Button>
         </Form>
+        
+        
+       
+       
     )
 }

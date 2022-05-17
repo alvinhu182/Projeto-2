@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button, Form, Toast } from "react-bootstrap";
 import { createUser } from "../../services/Users.service";
 import {useDispatch} from "react-redux";
-import {userLogin} from "../../Store/User/User.actions";
+import {userLogin} from "../../store/User/User.actions";
 import { useNavigate } from "react-router-dom";
 
 

@@ -2,10 +2,9 @@ import { apiUrl } from "./Api.service"
 import { removeStorageItem, setStorageItem } from "./Storage.service"
 
 export const login = async (credentialsData) => {
-    const body = JSON.stringify(credentialsData)
    const response = await fetch (`${apiUrl}/login`, {
        method: 'POST',
-       body,
+       body: JSON.stringify(credentialsData),
        headers: {
            'content-type': 'application/json'
        }
@@ -53,7 +52,7 @@ export const createUser = async (userData) => {
 
 const processAuthResponse = (data) => {
     const userData = {
-        accesToken: data.accesToken,
+        accessToken: data.accessToken,
         ...data.user
     }
     setStorageItem('user', JSON.stringify(userData))

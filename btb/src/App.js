@@ -7,8 +7,8 @@ import { DashboardView } from "./views/Dashboard";
 import { LoginView } from "./views/Login";
 import { PrivateRoute } from "./components/PrivateRoute";
 import { AdminCoursesView } from "./views/AdminCourses";
-import {AdminAddCoursesView} from "./views/AdminAddCourse"
-import {AdminEditCoursesView} from "./views/AdminEditCourse"
+import {AdminEditCourseView} from "./views/AdminEditCourses"
+import {AdminAddCourseView} from "./views/AdminAddCourse"
 
 
 
@@ -40,7 +40,7 @@ function App(){
          path='/portal/cursos/cadastro'
          element={
            <PrivateRoute userTypes={[1]}>
-             <AdminAddCoursesView />
+          <AdminAddCourseView />
            </PrivateRoute>
          }
          />
@@ -48,7 +48,7 @@ function App(){
          path='/portal/cursos/:id'
          element={
            <PrivateRoute userTypes={[1]}>
-             <AdminEditCoursesView />
+             <AdminEditCourseView />
            </PrivateRoute>
          }
          />

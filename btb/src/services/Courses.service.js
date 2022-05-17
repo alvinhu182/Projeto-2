@@ -18,7 +18,7 @@ export const getCourseById = async (courseId) => {
 }
 
 export const deleteCourse = async courseId => {
- const response =  await fetch (`${apiUrl}/courses${courseId}`, {
+ const response =  await fetch (`${apiUrl}/courses/${courseId}`, {
    method: 'DELETE',
    headers: getAuthorizationHeaders()
  })
@@ -32,18 +32,21 @@ export const createCourse = async courseData => {
   const response = await fetch (`${apiUrl}/courses`, {
     method: 'POST',
     body,
-    headers:{
+    headers: {
       'content-type':'application/json',
       ...getAuthorizationHeaders()
     }
   })
-  if (!response.ok)
+  if (!response.ok) {
+
+ 
   throw new Error ('Response not ok.')
+  }
 }
 
 export const updateCourse = async (courseId, courseData) => {
   const body = JSON.stringify(courseData)
-  const response = await fetch (`${apiUrl}/courses${courseId}`, { 
+  const response = await fetch (`${apiUrl}/courses/${courseId}`, { 
     method: 'PUT',
     body,
     headers: {

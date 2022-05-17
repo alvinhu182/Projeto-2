@@ -1,5 +1,5 @@
-import { store } from "../Store/store"
-import { selectUser } from "../Store/User/User.selectors"
+import { store } from "../store/store"
+import { selectUser } from "../store/User/User.selectors"
 
 export const apiUrl = process.env.REACT_APP_API_URL
 
@@ -8,7 +8,7 @@ export const getAuthorizationHeaders = () => {
     const user = selectUser(state)
     if (user) {
         return {
-            'autorization': `Bearer ${user.accessToken}`
+            'authorization': `Bearer ${user.accessToken}`
         }
     }
     return {}

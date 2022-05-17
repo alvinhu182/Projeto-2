@@ -11,7 +11,7 @@ export function AdminCoursesView (){
     const [loading, setLoading] = useState(true)
     const fetchCourses = async () => {
         try {
-            const data = await getCourses
+            const data = await getCourses()
             setCourses(data)
 
         } catch {
