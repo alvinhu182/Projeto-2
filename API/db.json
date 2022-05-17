@@ -2,27 +2,27 @@
   "courses": [
     {
       "name": "Zed",
-      "coach": "ZzZzZz",
-      "description": "usahusahuhasuhsauh é foda",
+      "coach": "Cara Bom",
+      "description": "Aprenda a jogar de zed de um jeito eficiente",
       "shortDescription": "Aprenda a jogar de Zed",
-      "id": 1,
-      "pathname": "/assets/img/zed.jpg"
+      "pathname": "/assets/img/zed.jpg",
+      "id": 1
     },
     {
       "name": "Lux",
       "coach": "MonoLux",
-      "description": "usahusahuhasuhsauh é foda",
+      "description": "vai soltar raiozinho e mata os outros, com a fadinha mais forte do jogo",
       "shortDescription": "Aprenda a jogar de Lux  ",
-      "id": 2,
-      "pathname": "/assets/img/lux.jpg"
+      "pathname": "/assets/img/lux.jpg",
+      "id": 2
     },
     {
       "name": "Kitting",
-      "coach": "XxXxxXx",
-      "description": "usahusahuhasuhsauh é foda",
+      "coach": "Cara Bom",
+      "description": "aprender a bater e correr, do melhor jeito possivel",
       "shortDescription": "Aprenda a fazer o Kitting",
-      "id": 3,
-      "pathname": "/assets/img/kitting.jpg"
+      "pathname": "/assets/img/kitting.jpg",
+      "id": 3
     },
     {
       "name": "Wardando o mapa",
@@ -89,6 +89,62 @@
       "email": "teste@teste.com",
       "courseId": 1,
       "id": 8
+    },
+    {
+      "name": "teste",
+      "email": "teste@teste.com",
+      "courseId": 1,
+      "userId": 4,
+      "id": 9
+    },
+    {
+      "name": "teste",
+      "email": "teste@teste.com",
+      "courseId": 2,
+      "userId": 4,
+      "id": 10
+    },
+    {
+      "name": "teste",
+      "email": "teste@teste.com",
+      "courseId": 2,
+      "userId": 4,
+      "id": 11
+    },
+    {
+      "name": "teste",
+      "email": "teste@teste.com",
+      "courseId": 2,
+      "userId": 4,
+      "id": 12
+    },
+    {
+      "name": "teste",
+      "email": "teste@teste.com",
+      "courseId": 2,
+      "userId": 4,
+      "id": 13
+    },
+    {
+      "name": "teste",
+      "email": "teste@teste.com",
+      "courseId": 1,
+      "userId": 4,
+      "id": 14
+    },
+    {
+      "name": "teste",
+      "email": "teste@teste.com",
+      "courseId": 1,
+      "userId": 4,
+      "id": 15
+    },
+    {
+      "name": "teste",
+      "email": "teste@teste.com",
+      "courseId": 2,
+      "userId": 4,
+      "id": 16
     }
   ],
   "users": [
